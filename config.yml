@@ -8,7 +8,6 @@ module:
       target: layouts
   imports:
     - path: github.com/hugolify/hugolify-theme-persons
-
 params:
   authors:
     thumbnail:
@@ -20,3 +19,9 @@ params:
     post:
       desktop: "50x50"
       mobile: "50x50"
+
+# Default
+permalinks:
+  authors: /news/:slug/
+taxonomies:
+  author: authors
