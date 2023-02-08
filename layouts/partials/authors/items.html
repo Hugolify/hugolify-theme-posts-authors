@@ -1,0 +1,8 @@
+<div class="authors">
+  {{ range . }}
+    <div>
+      {{ $person := partial "GetRealPerson" . }}
+      {{ partial "authors/item.html" $person }}
+    </div>
+  {{ end }}
+</div>
