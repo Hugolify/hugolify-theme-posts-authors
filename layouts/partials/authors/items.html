@@ -1,7 +1,7 @@
 <div class="authors">
   {{ range . }}
     <div>
-      {{ $person := partial "GetRealPerson" . }}
+      {{ $person := partial "func/GetRealPerson" . }}
       {{ partial "authors/item.html" $person }}
     </div>
   {{ end }}
