@@ -1,8 +1,9 @@
+{{ $person := partial "func/GetRealPerson" . }}
 {{ $desktop := site.Params.authors.thumbnail.desktop | default false }}
 {{ $mobile := site.Params.authors.thumbnail.mobile | default false }}
 {{ $w := printf "width: %spx" (index (split $desktop "x") 0 | default 100)  }}
 <div style="{{ $w }}">
-  {{- with .Params.image}}
+  {{- with $person.Params.image}}
     {{ partial "commons/image.html" (dict
       "src" .src
       "alt" .alt
