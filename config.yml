@@ -2,6 +2,8 @@ module:
   mounts:
     - source: assets
       target: assets
+    - source: content
+      target: content
     - source: i18n
       target: i18n
     - source: layouts
@@ -20,6 +22,6 @@ params:
 
 # Default
 permalinks:
-  authors: /news/:slug/
+  authors: /news/:section/:slug/
 taxonomies:
   author: authors
