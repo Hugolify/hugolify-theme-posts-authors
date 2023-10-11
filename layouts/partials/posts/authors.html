@@ -1,6 +1,6 @@
-{{ range .Params.authors }}
-  {{ $authors := where (where site.Pages "Section" "persons" ) "File.BaseFileName" "eq" . }}
-  {{ range $authors }}
-    {{ partial "commons/person" (dict "person" .) }}
-  {{ end }}
+{{ range .GetTerms "authors" }}
+  {{ partial "commons/person.html" (dict 
+    "person" . 
+    "show_btn" false 
+    ) }}
 {{ end }}
