@@ -7,6 +7,9 @@ imports:
   - path: github.com/hugolify/hugolify-theme-posts-authors
 ```
 
+## Depends
+https://www.github.com/hugolify/hugolify-theme-persons
+
 ## Documentation
 https://github.com/hugolify/hugolify-template/wiki
 
