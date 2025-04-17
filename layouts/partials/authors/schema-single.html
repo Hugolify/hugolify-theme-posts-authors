@@ -4,7 +4,7 @@
     "@type": "Person",
     "name": {{ .Title | plainify | safeHTML }},
     {{ with .Description }}
-      "description": {{ . | plainify | safeHTML }},
+      "description": {{ partial "func/PrepareData.html" . }},
     {{ end }}
     {{ with .Params.email }}
       "email": {{ . | plainify | safeHTML }},

@@ -1,9 +1,9 @@
 {{ define "hero"}}
-  {{- partial "authors/hero" . -}}
+  {{- partial "authors/hero.html" . -}}
 {{ end }}
 
 {{ define "main" }}
-  {{ partial "authors/schema" . }}
-  {{ partial "authors/blocks" . }}
-  {{ partial "authors/container" . }}
+  {{ partial "authors/schema.html" . }}
+  {{ partial "authors/blocks.html" . }}
+  {{ partial "authors/container.html" . }}
 {{ end }}
