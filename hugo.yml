@@ -23,6 +23,7 @@ params:
 
 # Default
 permalinks:
-  authors: /news/:section/:slug/
+  term:
+    authors: /news/:section/:slug/
 taxonomies:
   author: authors
