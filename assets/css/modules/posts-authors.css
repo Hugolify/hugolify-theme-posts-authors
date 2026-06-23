@@ -1,0 +1,12 @@
+/* css/modules/posts-authors.css — hugolify-theme-posts-authors entry point */
+
+/* Tokens */
+@import '../tokens/posts-authors.css';
+
+/* Components */
+@import '../components/posts-author.css';
+@import '../components/posts-authors.css';
+
+/* Pages */
+@import '../pages/posts-author.css';
+@import '../pages/posts-authors.css';

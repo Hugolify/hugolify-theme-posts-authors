@@ -1,0 +1,11 @@
+/* components/posts-authors.css */
+/*
+ * Usage: <article class="item author">
+ */
+@layer components {
+  .author {
+    .btn {
+      display: none;
+    }
+  }
+}
