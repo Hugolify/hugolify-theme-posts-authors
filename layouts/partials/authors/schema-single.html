@@ -1,20 +1,16 @@
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": {{ .Title | plainify | safeHTML }},
-    {{ with .Description }}
-      "description": {{ partial "func/PrepareData.html" . }},
-    {{ end }}
-    {{ with .Params.email }}
-      "email": {{ . | plainify | safeHTML }},
-    {{ end }}
-    {{ with .Params.phone }}
-      "telephone": {{ . | plainify | safeHTML }},
-    {{ end }}
-    {{ with .Params.fax }}
-      "faxNumber": {{ . | plainify | safeHTML }},
-    {{ end }}
-    "url": {{ .Permalink }}
-  }
-</script>
+{{- /* Schema.org for an author.
+
+       An author standing for a page of the persons section is described
+       there, and this listing of their posts is about them, see
+       pages/schema.html. One with no such page is only described here: the
+       page is their profile, the way Google reads an author page. */ -}}
+{{- $person := partial "func/GetRealPerson.html" . -}}
+{{- if and (not (reflect.IsMap $person)) (ne $person.Permalink .Permalink) -}}
+  {{- partial "pages/schema.html" . -}}
+{{- else -}}
+  {{- partial "commons/jsonld.html" (partial "func/GetSchemaWebPage.html" (dict
+    "page" .
+    "type" "ProfilePage"
+    "mainEntity" (partial "func/GetSchemaPerson.html" .)
+  )) -}}
+{{- end -}}
